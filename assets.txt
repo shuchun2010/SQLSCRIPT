@@ -1,0 +1,271 @@
+Create table Asset(
+ID_CAT int(3) primary key,
+Type_of_asset varchar(20),
+Total_worth varchar(20),
+Posted_date timestamp not null default current_timestamp);
+
+
+create table Weapon (
+Item_Number int(8) primary key auto_increment,
+Item_category int(3), 
+Item_brand varchar(20),
+Item_price decimal(6,2),
+Item_location varchar(20),
+Material varchar(20),
+Size varchar(10),
+Day_of_purchase date not null,  
+Posted_Date timestamp not null default current_timestamp);
+alter table Weapon alter column Item_category set default 100 ; 
+alter table weapon add foreign key (item_category) references asset(ID_CAT);
+
+create table Jacket 
+(Item_Number int(8) primary key auto_increment,
+Item_category int(3), 
+Item_brand varchar(20),
+Item_price decimal(6,2),
+Item_location varchar(20),
+Material varchar(20),
+Day_of_purchase date not null,  
+Posted_Date timestamp not null default current_timestamp);
+alter table Jacket add column Size varchar(10);
+alter table Jacket alter column Item_category set default 200 ; 
+alter table Jacket add foreign key (item_category) references asset(ID_CAT);
+
+create table Shoe 
+(Item_Number int(8) primary key auto_increment,
+Item_category int(3), 
+Item_brand varchar(20),
+Item_price decimal(6,2),
+Item_location varchar(20),
+Material varchar(20),
+Size varchar(10),
+Day_of_purchase date not null,  
+Posted_Date timestamp not null default current_timestamp);
+alter table Shoe alter column Item_category set default 300 ; 
+alter table Shoe add foreign key (item_category) references asset(ID_CAT);
+
+create table Shirt (
+Item_Number int(8) primary key auto_increment,
+Item_category int(3), 
+Item_brand varchar(20),
+Item_price decimal(6,2),
+Item_location varchar(20),
+Material varchar(20),
+Size varchar(10),
+Day_of_purchase date not null,  
+Posted_Date timestamp not null default current_timestamp);
+alter table shirt  alter column Item_category set default 400 ;
+alter table Shirt add foreign key (item_category) references asset(ID_CAT);
+
+
+create table pant (
+Item_Number int(8) primary key auto_increment,
+Item_category int(3), 
+Item_brand varchar(20),
+Item_price decimal(6,2),
+Item_location varchar(20),
+Material varchar(20),
+Size varchar(10),
+Day_of_purchase date not null,  
+Posted_Date timestamp not null default current_timestamp);
+alter table pant alter column Item_category set default 500 ; 
+alter table pant add foreign key (item_category) references asset(ID_CAT);
+
+create table hat (
+Item_Number int(8) primary key auto_increment,
+Item_category int(3), 
+Item_brand varchar(20),
+Item_price decimal(6,2),
+Item_location varchar(20),
+Material varchar(20),
+Size varchar(10),
+Day_of_purchase date not null,  
+Posted_Date timestamp not null default current_timestamp);
+alter table hat alter column Item_category set default 600 ; 
+alter table hat add foreign key (item_category) references asset(ID_CAT);
+
+create table appliance (
+Item_Number int(8) primary key auto_increment,
+Item_category int(3), 
+Item_brand varchar(20),
+Item_price decimal(6,2),
+Item_location varchar(20),
+Material varchar(20),
+Size varchar(10),
+Day_of_purchase date not null,  
+Posted_Date timestamp not null default current_timestamp);
+alter table appliance alter column Item_category set default 700 ;
+alter table appliance add foreign key (item_category) references asset(ID_CAT);
+
+insert into Weapon (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Kershaw_knife', 40.00, 'Philadelphia', 'metal', 'small', '2016-01-01');
+insert into Weapon (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('SF92', 500.00, 'Philadelphia', 'metal', '9mm', '2014-01-01');
+insert into Weapon (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('PX4 Storm', 540.00, 'Philadelphia', 'metal', '40C', '2015-01-01');
+insert into Jacket(Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('AG Brown Suede', 140.00, 'Philadelphia', 'Leather', '40R', '2018-07-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('AllSaints Black', 100.00, 'Philadelphia', 'Leather', 'Medium', '2018-11-18');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Suits1', 240.00, 'Philadelphia', 'Wool', '40R', '2016-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Suits2', 240.00, 'Philadelphia', 'Wool', '40R', '2016-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Suits3', 240.00, 'Philadelphia', 'Wool', '40R', '2005-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Pendleton Bomber', 100.00, 'Philadelphia', 'Wool', '40R', '2017-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('PendleTon Aztec', 100.00, 'Philadelphia', 'Wool', '40R', '2018-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Woldrich bomber', 10.00, 'Philadelphia', 'Wool', '40R', '2018-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Levi1', 20.00, 'Philadelphia', 'cotton', '40R', '2016-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Levi2', 20.00, 'Philadelphia', 'cotton', '40R', '2016-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Levi3', 20.00, 'Philadelphia', 'cotton', '40R', '2016-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Levi4', 20.00, 'Philadelphia', 'cotton', '40R', '2016-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Levi5', 20.00, 'Philadelphia', 'cotton', '40R', '2016-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Sports coat 1', 100.00, 'Philadelphia', 'Wool', '40R', '2018-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Sports coat 2', 100.00, 'Philadelphia', 'Wool', '40R', '2018-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Parka 1', 100.00, 'Philadelphia', 'Synthetic', '40R', '2018-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Raincoat 1', 100.00, 'Philadelphia', 'Synthetic', '40R', '2018-01-01');
+insert into Jacket (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('raincoat 2', 100.00, 'Philadelphia', 'Synthetic', '40R', '2018-01-01');
+insert into Shoe (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress Shoe1', 100.00, 'Philadelphia', 'leather', '9D', '2018-01-01');
+insert into Shoe (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress Shoe2', 100.00, 'Philadelphia', 'leather', '9D', '2018-01-01');
+insert into Shoe (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress Shoe loafer', 100.00, 'Philadelphia', 'leather', '9D', '2018-01-01');
+insert into Shoe (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Runnin Shoe1', 50.00, 'Philadelphia', 'Synthetic', '9D', '2018-01-01');
+insert into Shoe (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Runnin Shoe2', 50.00, 'Philadelphia', 'Synthetic', '9D', '2018-01-01');
+insert into Shoe (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Runnin Shoe3', 50.00, 'Philadelphia', 'Synthetic', '9D', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress shirt 1',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress shirt 2',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress shirt 3',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress shirt 4',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress shirt 5',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Casual shirt 1',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Casual shirt 2',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Casual shirt 3',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Casual shirt 4',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Casual shirt 5',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Casual shirt 6',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Polo shirt 1',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Polo shirt 2',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Polo shirt 3',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Polo shirt 4',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Polo shirt 5',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('T shirt 1',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('T shirt 2',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('T shirt 3',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('T shirt 4',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Wool shirt 1',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Wool shirt 2',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Wool shirt 3',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Flannel shirt 1',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Flannel shirt 2',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Shirt (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Flannel shirt 3',25.00, 'Philadelphia', 'Cotton', '40R', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 1',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 2',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 3',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 4',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 5',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 6',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 7',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 8',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Jean 9',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress 1',25.00, 'Philadelphia', 'wool', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Dress 2',25.00, 'Philadelphia', 'wool', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('casual 1',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('casual 2',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('casual 3',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('casual 4',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into Pant (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('casual 5',25.00, 'Philadelphia', 'Cotton', '30', '2018-01-01');
+insert into hat (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Ski 1',5.00, 'Philadelphia', 'synthetic', 'medium', '2018-01-01');
+insert into hat (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('ski 2',5.00, 'Philadelphia', 'synthetic', 'medium', '2018-01-01');
+insert into hat (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('ski 3',5.00, 'Philadelphia', 'synthetic', 'medium', '2018-01-01');
+insert into hat (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('ballcap 1',5.00, 'Philadelphia', 'Cotton', 'medium', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('iphone 6',255.00, 'Philadelphia', 'metal', 'regular', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('car ',1000.00, 'Philadelphia', 'metal', 'sedan', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('Coffee mug 1',5.00, 'Philadelphia', 'ceramic', 'medium', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('coffee 2',5.00, 'Philadelphia', 'cereamic', 'medium', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('yeti 1',15.00, 'Philadelphia', 'metal', '24oz', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('grinder 1',15.00, 'Philadelphia', 'metal', 'medium', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('heather 1',25.00, 'Philadelphia', 'metal', 'medium', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('laptop 1',155.00, 'Philadelphia', 'metal', 'medium', '2018-01-01');
+insert into appliance (Item_brand, item_price, item_location, material, size, day_of_purchase)
+value ('TV 1',155.00, 'Philadelphia', 'metal', 'medium', '2018-01-01');
+Insert into asset(ID_cat, Type_of_asset, Total_worth)
+Value (100, 'hardware', 1080.00);Insert into asset(ID_cat, Type_of_asset, Total_worth)
+Value (200, 'Clothing', 3400.00);Insert into asset(ID_cat, Type_of_asset, Total_worth)
+Value (300, 'Shoe', 750.00);Insert into asset(ID_cat, Type_of_asset, Total_worth)
+Value (400, 'Clothing',700.00);Insert into asset(ID_cat, Type_of_asset, Total_worth)
+Value (500, 'Clothing', 425.00);Insert into asset(ID_cat, Type_of_asset, Total_worth)
+Value (600, 'Clothing', 20.00);Insert into asset(ID_cat, Type_of_asset, Total_worth)
+Value (700, 'Hardware', 1630.00);
